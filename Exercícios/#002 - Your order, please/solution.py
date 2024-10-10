@@ -11,7 +11,7 @@
 # ""  -->  ""
 
 def order(sentence): 
-    frase = []
+    frase = {}
     if not sentence:  # Verifique se há algo, caso contrário retorne uma strig vazia
         return ""
     else:
@@ -20,17 +20,18 @@ def order(sentence):
             for letra in palavra: # Para cada letra
                 if letra.isnumeric(): #  verifique se é um número
                     num = int(letra) # Transforma o número em inteiro
-                    frase.insert(num-1, palavra) # Insere na posição certa da frase
-                    print(frase)
-        frase = " ".join(frase) # Junta as palavras da lista com um espaço
-        print(frase)
-
+                    frase[palavra] = num-1 # Insere na posição certa da frase
+        frase_arrumada = []
+        for p in sorted(frase, key = frase.get): # De alguma forma isso funciona
+            frase_arrumada.append(p)
+        frase_arrumada = " ".join(frase_arrumada)
+        print(frase_arrumada)
 order("4of Fo1r pe6ople g3ood th5e the2")
 
 # Versão para o CW:
 
 # def order(sentence): 
-#     frase = []
+#     frase = {}
 #     if not sentence:  # Verifique se há algo, caso contrário retorne uma strig vazia
 #         return ""
 #     else:
@@ -39,6 +40,9 @@ order("4of Fo1r pe6ople g3ood th5e the2")
 #             for letra in palavra: # Para cada letra
 #                 if letra.isnumeric(): #  verifique se é um número
 #                     num = int(letra) # Transforma o número em inteiro
-#                     frase.insert(num-1, palavra) # Insere na posição certa da frase
-#         frase = " ".join(frase) # Junta as palavras da lista com um espaço
-#         return(frase)
+#                     frase[palavra] = num-1 # Insere na posição certa da frase
+#         frase_arrumada = []
+#         for p in sorted(frase, key = frase.get):
+#             frase_arrumada.append(p)
+#         frase_arrumada = " ".join(frase_arrumada)
+#         return(frase_arrumada)
