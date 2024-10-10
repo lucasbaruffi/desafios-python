@@ -16,23 +16,21 @@
 # printer_error(s) => "8/22"
 
 def printer_error(s):
-    total = erros = 0
+    erros = 0
     s = s.lower().strip()
     for letra in s:
-        total += 1
         if letra not in "abcdefghijklm":
             erros += 1
-    print(f'{erros}/{total}')
+    print(f'{erros}/{len(s)}')
 
 printer_error("aaaxbbbbyyhwawiwjjjwwm")
 
 # Versão do CW:
 
 # def printer_error(s):
-#     total = erros = 0
+#     erros = 0
 #     s = s.lower().strip()
 #     for letra in s:
-#         total += 1
 #         if letra not in "abcdefghijklm":
 #             erros += 1
-#     return(f'{erros}/{total}')
+#     return(f'{erros}/{len(s)}')
