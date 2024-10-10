@@ -8,4 +8,23 @@
 # unique_in_order((1, 2, 2, 3, 3))   == [1, 2, 3]
 
 def unique_in_order(sequence):
-    return
+    letraAntiga = ""
+    lista = []
+    for letra in sequence:
+        if letra != letraAntiga:
+            lista.append(letra)
+        letraAntiga = letra
+    print(lista)
+
+unique_in_order((1, 2, 2, 3, 3))
+
+# Versão CW:
+
+# def unique_in_order(sequence):
+#     letraAntiga = ""
+#     lista = []
+#     for letra in sequence:
+#         if letra != letraAntiga:
+#             lista.append(letra)
+#         letraAntiga = letra
+#     return(lista)
