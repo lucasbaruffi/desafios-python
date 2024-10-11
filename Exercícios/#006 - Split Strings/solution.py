@@ -7,4 +7,31 @@
 # * 'abcdef' => ['ab', 'cd', 'ef']
 
 def solution(s):
-    pass
+    lista = []
+    listaFinal = []
+    if len(s) % 2 == 1: # Adiciona _ no final se for Impar
+        s = s + "_"
+    for letra in s: # Transforma em uma lista
+        lista.append(letra)   
+    for n, letra in enumerate(lista):
+        if n % 2 == 0:
+             duas_letras = f"{letra}{lista[n+1]}"
+             listaFinal.append(duas_letras)
+    print(listaFinal)
+
+solution("abcdef")
+
+# Solução CW:
+
+def solution(s):
+    lista = []
+    listaFinal = []
+    if len(s) % 2 == 1: # Adiciona _ no final se for Impar
+        s = s + "_"
+    for letra in s: # Transforma em uma lista
+        lista.append(letra)   
+    for n, letra in enumerate(lista):
+        if n % 2 == 0:
+             duas_letras = f"{letra}{lista[n+1]}"
+             listaFinal.append(duas_letras)
+    return(listaFinal)
