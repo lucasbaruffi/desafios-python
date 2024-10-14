@@ -6,4 +6,23 @@
 # ""             =>  ""
 
 def solution(s):
-    pass
+    frase = ""
+    for letra in s:
+        if letra.isupper():
+            frase = f"{frase} {letra}"
+        else:
+            frase = f"{frase}{letra}"
+    print(frase)
+
+solution("camelCasing")
+
+# Para o CW:
+
+def solution(s):
+    frase = ""
+    for letra in s:
+        if letra.isupper():
+            frase = f"{frase} {letra}"
+        else:
+            frase = f"{frase}{letra}"
+    return(frase)
