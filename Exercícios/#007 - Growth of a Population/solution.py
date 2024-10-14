@@ -26,6 +26,30 @@
 # 
 # There are no fractions of people. At the end of each year, the population count is an integer: 252.8 people round down to 252 persons.
 
+# p0 = população inicial
+# percent = aumento % (em decimal) por ano
+# aug = novos habitantes 
+# p = população final
+
+# A Função Floor vai arredondar um float para inteiro abaixo
+
+from math import floor
+
 def nb_year(p0, percent, aug, p):
-    # your code
-    pass
+    ano = 0
+    while p0 < p:
+        p0 = floor(p0) + floor(p0) * (percent/100) + aug
+        ano += 1
+    print(ano)
+
+nb_year(1500, 5, 100, 5000)
+
+# Para o CW:
+
+# from math import floor
+# def nb_year(p0, percent, aug, p):
+#     ano = 0
+#     while p0 < p:
+#         p0 = floor(p0) + floor(p0) * (percent/100) + aug
+#         ano += 1
+#     return(ano)
