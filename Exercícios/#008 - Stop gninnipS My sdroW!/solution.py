@@ -6,6 +6,16 @@
 # "This is a test        --> "This is a test" 
 # "This is another test" --> "This is rehtona test"
 
+# 1 - Criar uma função para inverter palavras
+
+def inverte_Palavra(palavra):
+    novaPalavra = ""
+    for letra in palavra:
+        novaPalavra = letra + novaPalavra
+    return novaPalavra
+
 def spin_words(sentence):
     # Your code goes here
     return None
+
+print(inverte_Palavra("Palavra"))
