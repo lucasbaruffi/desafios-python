@@ -9,10 +9,7 @@
 # 1 - Criar uma função para inverter palavras
 
 def inverte_Palavra(palavra):
-    novaPalavra = ""
-    for letra in palavra:
-        novaPalavra = letra + novaPalavra
-    return novaPalavra
+    return palavra[::-1]
 
 def spin_words(sentence):
     novaFrase = []
@@ -27,17 +24,11 @@ spin_words("This is another test")
 
 # Para o CW:
 
-# def inverte_Palavra(palavra):
-#     novaPalavra = ""
-#     for letra in palavra:
-#         novaPalavra = letra + novaPalavra
-#     return novaPalavra
-# 
 # def spin_words(sentence):
 #     novaFrase = []
 #     for palavra in sentence.split(" "):
 #         if len(palavra) >= 5:
-#             palavra = inverte_Palavra(palavra)
+#             palavra = palavra[::-1]
 #         novaFrase.append(palavra)
 #     novaFrase = " ".join(novaFrase)
 #     return(novaFrase)
