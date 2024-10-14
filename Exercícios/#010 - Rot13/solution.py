@@ -6,5 +6,21 @@
 # 
 # Please note that using encode is considered cheating.
 
-def rot13(message):
-    pass
+alfabeto = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ]
+
+def rot13(message): 
+    for letra in message:
+        if letra in alfabeto:
+            pos = alfabeto.index(letra) + 13
+            if pos > 26:
+                pos -= 26
+            novaLetra = alfabeto[pos]
+            print(novaLetra)
+        else:
+            print(letra)
+#    print(alfabeto.index("g"))
+#   for letra in message:
+#       if letra in alfabeto:
+#           print(letra)
+#
+rot13("abcz123@")
