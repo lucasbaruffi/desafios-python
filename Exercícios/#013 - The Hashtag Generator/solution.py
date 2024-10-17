@@ -14,5 +14,20 @@
 
 
 def generate_hashtag(s):
-    #your code here
-    pass
+    # Verifica se não está vazia
+    if s:
+        # Divide a frase em palavras
+        s = s.split()
+        frase = "#"
+        for palavra in s:
+            palavra = palavra.capitalize()
+            frase = frase + palavra
+        if len(frase) <= 140:
+            return frase
+        else:
+            return False           
+    else:
+        return False
+
+
+print(generate_hashtag(" Hello there thanks for trying my Kata"))
