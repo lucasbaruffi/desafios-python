@@ -10,4 +10,32 @@
 # 531 ==> -1
 
 def next_bigger(n):
+    listaOrignal = []
+    for alg in str(n):
+        listaOrignal.append(int(alg))
+
+    listaInversa = listaOrignal.copy()
+    listaInversa.reverse()
+
+    valoresEsq = []
+    for index, num in enumerate(listaInversa):
+        if index == 0:
+            valoresEsq.append(num)
+        else:
+            for valores in valoresEsq:
+                if valoresEsq[valores]
+        print(listaInversa[index])
+
     pass
+# Procurar o primeiro número (<-) que seja menor que UM dos números anteriores (da direita)
+# Procurar o núero que seja maior que seu anterior (da direita para esquerda) e subsituir um pelo outro
+
+# 1- Identificar, da Direita para a Esquerda, o primeiro número que seja maior que seus anteriores (da direita)
+    # Para isso, cada número que passar, adiciona em uma lista com o append
+
+# 2- Tendo identificado, separo, dos adicionados na lista, 
+
+
+next_bigger(34971)
+
+# Não foi
