@@ -18,5 +18,30 @@
 # wave("hello") => ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
 
 def wave(people):
-    # Code here
-    pass
+    # Verifica se não está vazia
+    if people:
+        listaFinal = []
+
+    # Transforma palavra em dicionário
+        listPalavra = []
+        for letra in people:
+            listPalavra.append(letra)
+
+    # Para cada item no dicionário, subsitui a localização do mesmo pela sua versão uppercase
+        for qtd in range(0, len(listPalavra)):
+            novaLista = listPalavra.copy()
+            
+            # Verifica se é uma letra - desconsidere espaços em branco
+            if novaLista[qtd].isalnum():
+                novaLista[qtd] = novaLista[qtd].upper()
+
+                # Cria uma palavra com a lista corrigida e adiciona na resposta
+                novaPalavra = "".join(novaLista)
+                listaFinal.append(novaPalavra)
+        return listaFinal
+    else:
+        return []
+
+
+
+print(wave("hello world"))
