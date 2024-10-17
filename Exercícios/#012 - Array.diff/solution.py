@@ -8,18 +8,23 @@
 # array_diff([1,2,2,2,3],[2]) == [1,3]
 
 def array_diff(a, b):
-# 1 - Passar por cada valor da lista a
-# 2 - Passar por cada valor da lista b
-    # Se o valor for igual ao da lista a, remove o mesmo
-    novoA = []
-    novoB = []
-    for valA in a:
-        novoA.append(str(valA))
-    valoresA = "".join(novoA)
-    
-    for valB in b:
-        valoresA.replace(str(valB), "")
+    if b:
+        novoA = []
+        for valA in a:
+            novoA.append(int(valA))
+        valoresA = " ".join(novoA)
+        for valB in b:
+            valoresA= valoresA.replace(str(valB), "")
+        
+#       print(valoresA.split())
+#       # Transforma em lista
+#       listaFinal = []
+#       for valor in valoresA:
+#           listaFinal.append(int(valor))
+#       return valoresA.split()
+    else:
+        return b
 
-    print(valoresA)
+print(array_diff([-4, -4, -13, 12, 12, -6, 7], [-19, 10, 19, -1, 0, -3, 15]))
 
-print(array_diff([1,2,2,2,3],[1, 2]))
+# Não deu ;-;
