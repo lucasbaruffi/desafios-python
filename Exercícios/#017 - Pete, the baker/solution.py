@@ -14,4 +14,20 @@
 # cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100}, {sugar: 500, flour: 2000, milk: 2000})
 
 def cakes(recipe, available):
-    return 5
+    possibilidade = []
+    for item in recipe:
+        realizável = available.get(item, 0) // recipe[item]
+        possibilidade.append(realizável)
+    return min(possibilidade)
+
+
+
+
+
+
+
+recipe = {"apples": 3, "flour": 300, "sugar": 150, "milk": 100, "oil": 100}
+available = {"sugar": 500, "flour": 2000, "milk": 2000}
+
+
+print(cakes(recipe, available))
