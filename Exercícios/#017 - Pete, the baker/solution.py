@@ -19,14 +19,7 @@ def cakes(recipe, available):
         possibilidade.append(available.get(item, 0) // recipe[item])
     return min(possibilidade)
 
-
-
-
-
-
-
 recipe = {"apples": 3, "flour": 300, "sugar": 150, "milk": 100, "oil": 100}
 available = {"sugar": 500, "flour": 2000, "milk": 2000}
-
 
 print(cakes(recipe, available))
