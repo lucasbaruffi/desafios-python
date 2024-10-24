@@ -16,8 +16,7 @@
 def cakes(recipe, available):
     possibilidade = []
     for item in recipe:
-        realizável = available.get(item, 0) // recipe[item]
-        possibilidade.append(realizável)
+        possibilidade.append(available.get(item, 0) // recipe[item])
     return min(possibilidade)
 
 
