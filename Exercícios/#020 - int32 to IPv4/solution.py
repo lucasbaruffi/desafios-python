@@ -17,13 +17,6 @@
 # 32         ==> "0.0.0.32"
 # 0          ==> "0.0.0.0"
 
-def int32_to_ip(int32):
-    binario = bin(int32)
-    print(binario)
-#    binario = str(binario).zfill(32)
-#    print(binario)
-#    print(divideint32(binario))
-
 # Função para dividir um número de 32 dígitos em 4 de 8
 def divideint32(int32):
     n1 = int32[0],int32[1],int32[2],int32[3],int32[4],int32[5],int32[6],int32[7]
@@ -31,20 +24,37 @@ def divideint32(int32):
     n3 = int32[16],int32[17],int32[18],int32[19],int32[20],int32[21],int32[22],int32[23]
     n4 = int32[24],int32[25],int32[26],int32[27],int32[28],int32[29],int32[30],int32[31]
 
+    binarioSeparado = []
+
     n1 = "".join(n1)
     n2 = "".join(n2)
     n3 = "".join(n3)
     n4 = "".join(n4)
 
-    return n1, n2, n3, n4
-#int32_to_ip(2154959208)
+    binarioSeparado.append(n1)
+    binarioSeparado.append(n2)
+    binarioSeparado.append(n3)
+    binarioSeparado.append(n4)
 
+    return binarioSeparado
 
-def binario(num):
-    valorBinario = ""
-    while num >1:
-        zeroOuUm = num % 2
-        valorBinario = str(zeroOuUm) + valorBinario
-        num = num // 2
-    print(valorBinario)
-binario(2)
+def int32_to_ip(int32):
+    if int32 == 0:
+        return "0.0.0.0"
+    binario = ""
+    while int32 > 0:
+        binario = str(int32 % 2) + binario
+        int32 //= 2
+    binario = binario.zfill(32)
+
+    binarioSeparado = divideint32(binario)
+
+    decimalSeparado = []
+    for numero in binarioSeparado:
+        num = int(numero, 2)
+        decimalSeparado.append(str(num))
+    
+    IPv4 = ".".join(decimalSeparado)
+    return IPv4 
+
+print(int32_to_ip(0))
