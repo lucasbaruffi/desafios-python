@@ -19,6 +19,11 @@
 # 
 # Good luck!
 
+# from itertools import combinations
+
+
 def permutations(s):
-    # Code Away!
-    pass
+    from itertools import permutations
+    return (list(set([''.join(p) for p in permutations(s)])))
+
+print(permutations("abcc"))
