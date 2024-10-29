@@ -27,5 +27,43 @@
 #   [3,4,5,2,8,6,1,7,9]]
 
 def sudoku(puzzle):
-    """return the solved puzzle as a 2d array of 9 x 9"""
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     return puzzle
+
+
+puzzle = [[5,3,0,0,7,0,0,0,0],
+          [6,0,0,1,9,5,0,0,0],
+          [0,9,8,0,0,0,0,6,0],
+          [8,0,0,0,6,0,0,0,3],
+          [4,0,0,8,0,3,0,0,1],
+          [7,0,0,0,2,0,0,0,6],
+          [0,6,0,0,0,0,2,8,0],
+          [0,0,0,4,1,9,0,0,5],
+          [0,0,0,0,8,0,0,7,9]]
+# 
+puzzle = sudoku(puzzle)
+
+print(f"{puzzle[0][0]} {puzzle[0][1]} {puzzle[0][2]} | {puzzle[0][3]} {puzzle[0][4]} {puzzle[0][5]} | {puzzle[0][6]} {puzzle[0][7]} {puzzle[0][8]}")
+print(f"{puzzle[1][0]} {puzzle[1][1]} {puzzle[1][2]} | {puzzle[1][3]} {puzzle[1][4]} {puzzle[1][5]} | {puzzle[1][6]} {puzzle[1][7]} {puzzle[1][8]}")
+print(f"{puzzle[2][0]} {puzzle[2][1]} {puzzle[2][2]} | {puzzle[2][3]} {puzzle[2][4]} {puzzle[2][5]} | {puzzle[2][6]} {puzzle[2][7]} {puzzle[2][8]}")
+print("-"*22)
+print(f"{puzzle[3][0]} {puzzle[3][1]} {puzzle[3][2]} | {puzzle[3][3]} {puzzle[3][4]} {puzzle[3][5]} | {puzzle[3][6]} {puzzle[3][7]} {puzzle[3][8]}")
+print(f"{puzzle[4][0]} {puzzle[4][1]} {puzzle[4][2]} | {puzzle[4][3]} {puzzle[4][4]} {puzzle[4][5]} | {puzzle[4][6]} {puzzle[4][7]} {puzzle[4][8]}")
+print(f"{puzzle[5][0]} {puzzle[5][1]} {puzzle[5][2]} | {puzzle[5][3]} {puzzle[5][4]} {puzzle[5][5]} | {puzzle[5][6]} {puzzle[5][7]} {puzzle[5][8]}")
+print("-"*22)
+print(f"{puzzle[6][0]} {puzzle[6][1]} {puzzle[6][2]} | {puzzle[6][3]} {puzzle[6][4]} {puzzle[6][5]} | {puzzle[6][6]} {puzzle[6][7]} {puzzle[6][8]}")
+print(f"{puzzle[7][0]} {puzzle[7][1]} {puzzle[7][2]} | {puzzle[7][3]} {puzzle[7][4]} {puzzle[7][5]} | {puzzle[7][6]} {puzzle[7][7]} {puzzle[7][8]}")
+print(f"{puzzle[8][0]} {puzzle[8][1]} {puzzle[8][2]} | {puzzle[8][3]} {puzzle[8][4]} {puzzle[8][5]} | {puzzle[8][6]} {puzzle[8][7]} {puzzle[8][8]}")
