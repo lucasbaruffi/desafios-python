@@ -9,5 +9,16 @@
 # 
 # Python: your solution need to work with huge numbers (about a milion digits), converting to int will not work.
 
-def sum_strings(x, y):
-    return "42"
+from sys import set_int_max_str_digits
+set_int_max_str_digits(0)
+
+def sum_strings(x=0, y=0):
+    if not x:
+        x = "0"
+    if not y:
+        y = "0"
+    return str((int(x)) + (int(y)))
+
+print(sum_strings("0", ""))
+
+# É isso, mas o Kata impôs limitação de 12000ms, então não foi possível
