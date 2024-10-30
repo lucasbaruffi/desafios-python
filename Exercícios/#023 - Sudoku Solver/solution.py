@@ -27,9 +27,25 @@
 #   [3,4,5,2,8,6,1,7,9]]
 
 def sudoku(puzzle):
-
-
+    coluna1 = []
+    coluna2 = []
+    coluna3 = []
+    coluna4 = []
+    coluna5 = []
+    coluna6 = []
+    coluna7 = []
+    coluna8 = []
+    coluna9 = []
     
+    grupo1 = []
+    grupo2 = []
+    grupo3 = []
+    grupo4 = []
+    grupo5 = []
+    grupo6 = []
+    grupo7 = []
+    grupo8 = []
+    grupo9 = []
     
     
     
