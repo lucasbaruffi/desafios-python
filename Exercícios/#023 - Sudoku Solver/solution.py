@@ -28,41 +28,59 @@
 
 
 import random
+from copy import deepcopy
+
 def miniSudoku(puzzle):
-    originPuzzle = puzzle.copy()
-    # Randomiza um número
-    sorteados = 0
+    originalPuzzle = deepcopy(puzzle)
+    finalPuzzle = list()
+    for numLinha, linha in enumerate(puzzle):
+        # Randomiza um número
+        sorteados = 0
+        while True:
+            sort = random.randrange(1,10) # de 1 a 9
+            #print(f'Número Sorteado:{sort}')
+            sorteados += 1
+            # Que naõ esteja na linha
+            if sort not in linha:
+                posição = linha.index(0)
 
-    while True:
-        sort = random.randrange(0,9)
-        #print(f'Número Sorteado:{sort}')
-        sorteados += 1
-        # Que naõ esteja na linha
-        if sort not in puzzle:
-            #print(f'Número Aceito:{sort}')
+                # Se não for a última linha:
+                if numLinha < len(puzzle)-1:
+                    # Se não estiver na linha seguinte
+                    print(puzzle[numLinha+1][posição])
+                print(f"A posição do primeiro 0 é {posição}")
 
-            posição = puzzle.index(0)
-            #print(f"A posição do primeiro 0 é {posição}")
+                # Substitui o valor
+                linha.pop(posição)
+                linha.insert(posição, sort)
+                #print(puzzle)
+                
 
-            puzzle.pop(posição)
+            if sum(linha) == 45:
+                finalPuzzle.append(linha)
+                break
+    print(f"Entrou: {originalPuzzle}")
+    print(f"Solução: {finalPuzzle}")
+    print(f"Tentativas: {sorteados}")       
 
-            puzzle.insert(posição, sort)
-            #print(puzzle)
         
-        if sum(puzzle) == 45:
-            print(f"Entrou: {originPuzzle}")
-            print(f"Solução: {puzzle}")
-            print(f"Tentativas: {sorteados}")
-
-            break
-    
+        
+        
 
 
 
 
+# puzzle = [[5,3,0,0,7,0,0,0,0],
+#           [6,0,0,1,9,5,0,0,0],
+#           [0,9,8,0,0,0,0,6,0],
+#           [8,0,0,0,6,0,0,0,3],
+#           [4,0,0,8,0,3,0,0,1],
+#           [7,0,0,0,2,0,0,0,6],
+#           [0,6,0,0,0,0,2,8,0],
+#           [0,0,0,4,1,9,0,0,5],
+#           [0,0,0,0,8,0,0,7,9]]
 
-
-puzzle = [5,3,0,6,0,0,0,9,8]
+puzzle = [[1,0,3,0,2,0,0,5,0], [5,3,0,0,7,0,0,0,4]]
 puzzle = miniSudoku(puzzle)
 
 
@@ -129,15 +147,15 @@ puzzle = miniSudoku(puzzle)
 #    return puzzle
 #
 #
-# puzzle = [[5,3,0,0,7,0,0,0,0],
-#           [6,0,0,1,9,5,0,0,0],
-#           [0,9,8,0,0,0,0,6,0],
-#           [8,0,0,0,6,0,0,0,3],
-#           [4,0,0,8,0,3,0,0,1],
-#           [7,0,0,0,2,0,0,0,6],
-#           [0,6,0,0,0,0,2,8,0],
-#           [0,0,0,4,1,9,0,0,5],
-#           [0,0,0,0,8,0,0,7,9]]
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
 # # 
 # puzzle = sudoku(puzzle)
 #
