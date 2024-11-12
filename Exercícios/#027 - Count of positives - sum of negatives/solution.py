@@ -1,12 +1,10 @@
 # https://www.codewars.com/kata/52597aa56021e91c93000cb0/train/python
 
 def move_zeros(lst):
-    zeros = 0
+    zeros = lst.count(0)
     while 0 in lst:
         indice = lst.index(0)
-        zeros += 1
         lst.pop(indice)
-        print(indice)
     for c in range(0,zeros):
         lst.append(0)
     return lst
