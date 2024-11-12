@@ -1,6 +1,4 @@
-# https://www.codewars.com/kata/5977618080ef220766000022/train/python
+# https://www.codewars.com/kata/52597aa56021e91c93000cb0/train/python
 
-def usdcny(usd):
-    return f'{(usd * 6.75):.2f} Chinese Yuan'
-
-print(usdcny(465))
+def move_zeros(lst):
+    return lst
