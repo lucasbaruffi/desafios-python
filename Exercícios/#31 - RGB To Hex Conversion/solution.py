@@ -30,9 +30,7 @@ def toHex(n):
         return "FF"
 
     elif n < 16:
-        n = decToHex(n)
-        n = n.zfill(2)
-        return n
+        return decToHex(n).zfill(2)
 
     else:
         divInt = []
