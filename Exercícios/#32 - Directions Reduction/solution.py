@@ -3,9 +3,7 @@
 def dir_reduc(arr):
     palavras = " ".join(arr)
     while "EAST WEST" in palavras or "NORTH SOUTH" in palavras or "WEST EAST" in palavras or "SOUTH NORTH" in palavras:
-        palavras = palavras.replace("EAST WEST","").replace("NORTH SOUTH","").replace("WEST EAST","").replace("SOUTH NORTH","")
-        palavras = palavras.split()
-        palavras = " ".join(palavras)
+        palavras = " ".join(palavras.replace("EAST WEST","").replace("NORTH SOUTH","").replace("WEST EAST","").replace("SOUTH NORTH","").split())
     return palavras.split()
 
 
