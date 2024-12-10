@@ -5,6 +5,8 @@
 # APP_USER=admin
 # APP_PASSWORD=@123AB
 
+# Coloquei também uma "cópia" do .env no .env.example
+
 import os
 from dotenv import load_dotenv
 
