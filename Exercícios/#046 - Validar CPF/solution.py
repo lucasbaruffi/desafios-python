@@ -1,33 +1,29 @@
-cpf = "145.382.206-20"
+# O objetivo aqui é criar um código que receba um CPF e retorne se é válidou ou inválido.
 
-cpf = cpf.replace(".","").replace("-","")
+cpf = "79662289088"
+cpf_verificado = ""
 
-validador_1 = cpf[9]
-validador_2 = cpf[10]
-
-
-soma_digitos = 0
+# Separa os dígitos
 for n in range(0,9):
-    soma_digitos += int(cpf[n]) * (len(cpf)-1-n)
+    cpf_verificado += cpf[n]
 
-resto = soma_digitos % 11
 
-valor_final = 11-resto
+for n in range(0,2):
+    # Soma os digitos
+    soma_digitos = 0
+    verificador = 0
 
-if valor_final < 10:
-    validador_correto_1 = valor_final
+    for cont, n in enumerate(cpf_verificado):
+        soma_digitos += int(n) * (len(cpf_verificado) + 1 - cont) # Contagem decrescente
+    verificador = 11 - (soma_digitos % 11)
+    
+    if verificador >= 10:
+        cpf_verificado += "0"
+    else:
+        cpf_verificado += str(verificador)
+
+if cpf == cpf_verificado:
+    print("CPF Válido!")
 else:
-    validador_correto_1 = 0
-
-soma_digitos = 0
-for n in range(0,19):
-    soma_digitos += int(cpf[n]) * (len(cpf)-1-n)
-
-resto = soma_digitos % 11
-
-valor_final = 11-resto
-
-
-
-
-print(valor_final)
+    print(f"""CPF Inválido!
+CPF correto: {cpf_verificado}""")
