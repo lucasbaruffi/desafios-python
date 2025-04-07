@@ -8,36 +8,38 @@ def snail(snail_map):
 
     while True:
         pos_vistas.append(f"{str(x)}{str(y)}") # Salva posições vistas
+        print(snail_map[x][y])
+        resultado.append(snail_map[x][y])
 
+        direita = y + 1
+        esquerda = y - 1
+        cima = x - 1
+        baixo = x + 1
 
-        while y+1 <= tamanho:
-            if f"{str(x)}{str(y+1)}" not in pos_vistas:
-                print(snail_map[x][y+1])
-                y += 1
+        if direita <= tamanho and f"{str(x)}{str(direita)}" not in pos_vistas:
+            y += 1
+            print("Foi para a Direita")
 
-        while x+1 <= tamanho:           
-            print(snail_map[x+1][y])
-            x += 1
+        elif baixo <= tamanho and f"{str(baixo)}{str(y)}" not in pos_vistas:
+            x += 1       
+            print("Foi para Baixo")
 
-        while y-1 >= 0:  
-            if f"{str(x)}{str(y-1)}" not in pos_vistas:         
-                print(snail_map[x][y-1])
-                y -= 1
+        elif esquerda >= 0 and f"{str(x)}{str(esquerda)}" not in pos_vistas:
+            y -= 1    
+            print("Foi para a Esquerda")    
 
-        while x-1 >= 0:           
-            print(snail_map[x-1][y])
-            x -= 1
+        elif cima >= 0 and f"{str(cima)}{str(y)}" not in pos_vistas:
+            x -= 1    
+            print("Foi para Cima")    
 
+        else:
+            break
+    print(resultado)
 
-        break
-
-        
-
-
-
-array = [[1,2,3],
-         [4,5,6],
-         [7,8,9]]
+array = [[1,2,3,4],
+         [8,9,4,5],
+         [7,6,5,6],
+         [10,11,12,13]]
 
 expected = [1,2,3,6,9,8,7,4,5]
 
