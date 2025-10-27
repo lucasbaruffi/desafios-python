@@ -1,12 +1,10 @@
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
     
-        for idx1 in range(0, len(nums)):
-            soma = 0
-            for idx2 in range(idx1, len(nums)):
-                if nums[idx1] + nums[idx2] == target:
-                    return [nums[idx1], nums[idx2]]
+        for i in range(0, len(nums)):
+            if target - nums[i] in nums:
+                if nums.index(target - nums[i]) != i:
+                    return [i, nums.index(target - nums[i])] 
 
 
-
-    twoSum("x", [2,7,11,15], 9)
+    print(twoSum("x", [2,7,11,15], 9))
